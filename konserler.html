@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konserler - KO-Bilet</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .theater-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .theater-card:hover {
+            transform: translateY(-5px);
+        }
+        .theater-image {
+            height: 250px;
+            object-fit: cover;
+        }
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .favorite-btn:hover {
+            color: #ff4444;
+        }
+        .favorite-btn.active {
+            color: #ff4444;
+        }
+        .tickets-left {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .play-details-btn {
+            position: absolute;
+            top: 10px;
+            left: auto;
+            right: 130px;
+            bottom: auto;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">KO-Bilet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="etkinlikler.html">Etkinlikler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="konserler.html">Konserler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tiyatro.html">Tiyatro</a>
+
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-light me-2">Giriş Yap</a>
+                    <a href="#" class="btn btn-primary">Kayıt Ol</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Concert Categories -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4">Konser Kategorileri</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-guitar"></i> Rock</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-music"></i> Pop</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-saxophone"></i> Jazz</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-violin"></i> Klasik</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-microphone"></i> Türk Sanat Müziği</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-drum"></i> Türk Halk Müziği</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-headphones"></i> Elektronik</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-hip-hop"></i> Hip Hop</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative" style="height: 420px; background: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;">
+        <div class="container h-100 d-flex align-items-center justify-content-center">
+            <!-- Text removed -->
+        </div>
+    </section>
+
+    <!-- Concerts Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Yaklaşan Konserler</h2>
+            <div class="row">
+                <!-- Concert Card 1 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Rock Konseri">
+                        <div class="price-tag">₺350</div>
+                        <div class="category-badge">Rock</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Rock Festivali 2024</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 15 Haziran 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye<br>
+                                <i class="fas fa-user"></i> Tarkan
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concert Card 2 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Pop Konseri">
+                        <div class="price-tag">₺450</div>
+                        <div class="category-badge">Pop</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pop Gecesi</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 20 Haziran 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> Ankara, Türkiye<br>
+                                <i class="fas fa-user"></i> Sezen Aksu
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concert Card 3 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Jazz Konseri">
+                        <div class="price-tag">₺280</div>
+                        <div class="category-badge">Jazz</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jazz Festivali</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 25 Haziran 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> İzmir, Türkiye<br>
+                                <i class="fas fa-user"></i> Various Artists
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concert Card 4 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="TSM Konseri">
+                        <div class="price-tag">₺400</div>
+                        <div class="category-badge">TSM</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Türk Sanat Müziği Gecesi</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 30 Haziran 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye<br>
+                                <i class="fas fa-user"></i> Müzeyyen Senar
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concert Card 5 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Elektronik Konseri">
+                        <div class="price-tag">₺550</div>
+                        <div class="category-badge">Elektronik</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Elektronik Müzik Festivali</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 5 Temmuz 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> İzmir, Türkiye<br>
+                                <i class="fas fa-user"></i> David Guetta
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concert Card 6 -->
+                <div class="col-md-4">
+                    <div class="card theater-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Hip Hop Konseri">
+                        <div class="price-tag">₺380</div>
+                        <div class="category-badge">Hip Hop</div>
+                        <button class="favorite-btn" onclick="toggleFavorite(this)">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="play-details-btn" data-bs-toggle="modal" data-bs-target="#concertDetailsModal">
+                            <i class="fas fa-info-circle"></i> Detaylar
+                        </button>
+                        <div class="tickets-left">
+                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hip Hop Night</h5>
+                            <p class="card-text">
+                                <i class="fas fa-calendar-alt"></i> 10 Temmuz 2024<br>
+                                <i class="fas fa-map-marker-alt"></i> Ankara, Türkiye<br>
+                                <i class="fas fa-user"></i> Ceza & Sagopa Kajmer
+                            </p>
+                            <a href="#" class="btn btn-primary">Bilet Al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Önceki</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Sonraki</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Concert Details Modal -->
+    <div class="modal fade" id="concertDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Rock Festivali 2024</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="modal-image" alt="Rock Festivali">
+                    <h4>Konser Hakkında</h4>
+                    <p>Tarkan'ın yeni albümünü tanıtacağı özel konser gecesi! En sevilen şarkılar ve yeni parçalar eşliğinde unutulmaz bir gece sizi bekliyor.</p>
+                    
+                    <h4>Sanatçı Bilgileri</h4>
+                    <ul>
+                        <li>Sanatçı: Tarkan</li>
+                        <li>Tür: Rock</li>
+                        <li>Albüm: Yeni Albüm</li>
+                    </ul>
+
+                    <h4>Konser Detayları</h4>
+                    <ul>
+                        <li>Süre: 2 Saat</li>
+                        <li>Yaş Sınırı: 18+</li>
+                        <li>Başlangıç: 15 Haziran 2024, 20:00</li>
+                        <li>Kapı Açılış: 19:00</li>
+                    </ul>
+
+                    <h4>Mekan Bilgisi</h4>
+                    <p>Volkswagen Arena İstanbul<br>
+                    Adres: Huzur Mahallesi, İstanbul<br>
+                    Kapasite: 5.000 kişi</p>
+
+                    <h4>Önemli Notlar</h4>
+                    <ul>
+                        <li>Fotoğraf ve video çekimi yasaktır</li>
+                        <li>Yiyecek ve içecek satış noktaları bulunmaktadır</li>
+                        <li>Park alanı mevcuttur</li>
+                        <li>Engelli erişimi uygundur</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    <a href="#" class="btn btn-primary">Bilet Al</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">KO-Bilet</h5>
+                    <p class="mb-3">Türkiye'nin en güvenilir bilet satış platformu. Konser, tiyatro ve etkinlik biletleriniz için doğru adres.</p>
+                    <div class="social-links mb-3">
+                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="mb-0"><i class="fas fa-phone me-2"></i> 0850 123 45 67</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@ko-bilet.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Hızlı Linkler</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Ana Sayfa</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Konserler</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Tiyatro</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Etkinlikler</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Kampanyalar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Yardım & Destek</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Sıkça Sorulan Sorular</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Bilet İade Koşulları</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Gizlilik Politikası</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Kullanım Koşulları</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Bültenimize Katılın</h5>
+                    <p class="mb-3">En yeni etkinliklerden haberdar olmak için bültenimize abone olun.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="E-posta adresiniz">
+                            <button class="btn btn-primary" type="submit">Abone Ol</button>
+                        </div>
+                    </form>
+                    <div class="payment-methods">
+                        <h6 class="mb-3">Ödeme Yöntemleri</h6>
+                        <div class="d-flex gap-2">
+                            <i class="fab fa-cc-visa fs-4 text-light"></i>
+                            <i class="fab fa-cc-mastercard fs-4 text-light"></i>
+                            <i class="fab fa-cc-paypal fs-4 text-light"></i>
+                            <i class="fab fa-cc-apple-pay fs-4 text-light"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 KO-Bilet. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Güvenli Alışveriş | SSL Sertifikası</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function toggleFavorite(button) {
+            button.classList.toggle('active');
+            const icon = button.querySelector('i');
+            if (button.classList.contains('active')) {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+            } else {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+            }
+        }
+    </script>
+</body>
+</html> 
