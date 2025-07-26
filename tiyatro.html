@@ -102,375 +102,316 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">KO-Bilet</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Ana Sayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="etkinlikler.html">Etkinlikler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="konserler.html">Konserler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="tiyatro.html">Tiyatro</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a href="#" class="btn btn-outline-light me-2">Giriş Yap</a>
-                    <a href="#" class="btn btn-primary">Kayıt Ol</a>
-                </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">KO-Ticket</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="etkinlikler.html">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="konserler.html">Concerts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="tiyatro.html">Theater</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <a href="#" class="btn btn-outline-light me-2">Login</a>
+                <a href="#" class="btn btn-primary">Register</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Theater Categories -->
-    <section class="py-4 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="mb-4">Tiyatro Kategorileri</h2>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-laugh"></i> Komedi</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-theater-masks"></i> Drama</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-music"></i> Müzikal</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-child"></i> Çocuk Oyunu</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-book"></i> Klasik</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-lightbulb"></i> Modern</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-question-circle"></i> Absürd</a>
-                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-film"></i> Belgesel</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hero Section -->
-    <section class="hero-section position-relative" style="height: 420px; background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;">
-        <div class="container h-100 d-flex align-items-center justify-content-center">
-            <!-- Text removed -->
-        </div>
-    </section>
-
-    <!-- Theater Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Yaklaşan Oyunlar</h2>
-            <div class="row">
-                <!-- Theater Card 1 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Romeo ve Juliet">
-                        <div class="price-tag">₺180</div>
-                        <div class="category-badge">Drama</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Romeo ve Juliet</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 20 Haziran 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> Ankara, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> Devlet Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theater Card 2 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Hamlet">
-                        <div class="price-tag">₺200</div>
-                        <div class="category-badge">Klasik</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Hamlet</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 25 Haziran 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> İstanbul Şehir Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theater Card 3 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Kırmızı Başlıklı Kız">
-                        <div class="price-tag">₺120</div>
-                        <div class="category-badge">Çocuk Oyunu</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Kırmızı Başlıklı Kız</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 30 Haziran 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> İzmir, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> İzmir Devlet Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theater Card 4 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Venedik Taciri">
-                        <div class="price-tag">₺220</div>
-                        <div class="category-badge">Klasik</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Venedik Taciri</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 5 Temmuz 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> Ankara, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> Devlet Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theater Card 5 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Müzikal">
-                        <div class="price-tag">₺350</div>
-                        <div class="category-badge">Müzikal</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Notre Dame'ın Kamburu</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 10 Temmuz 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> İstanbul Şehir Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theater Card 6 -->
-                <div class="col-md-4">
-                    <div class="card theater-card">
-                        <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Komedi">
-                        <div class="price-tag">₺150</div>
-                        <div class="category-badge">Komedi</div>
-                        <button class="favorite-btn" onclick="toggleFavorite(this)">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
-                            <i class="fas fa-info-circle"></i> Detaylar
-                        </button>
-                        <div class="tickets-left">
-                            <i class="fas fa-ticket-alt"></i> Son 15 Bilet
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Yanlışlıklar Komedyası</h5>
-                            <p class="card-text">
-                                <i class="fas fa-calendar-alt"></i> 15 Temmuz 2024<br>
-                                <i class="fas fa-map-marker-alt"></i> İzmir, Türkiye<br>
-                                <i class="fas fa-theater-masks"></i> İzmir Devlet Tiyatrosu
-                            </p>
-                            <a href="#" class="btn btn-primary">Bilet Al</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pagination -->
-            <nav class="mt-4">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1">Önceki</a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Sonraki</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Play Details Modal -->
-    <div class="modal fade" id="playDetailsModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Romeo ve Juliet</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="modal-image" alt="Romeo ve Juliet">
-                    <h4>Oyun Hakkında</h4>
-                    <p>Shakespeare'in ölümsüz aşk hikayesi, modern bir yorumla sahnede! Verona'nın iki düşman ailesi arasında yeşeren aşkın hikayesi, günümüz yorumuyla izleyicilerle buluşuyor.</p>
-                    
-                    <h4>Oyuncular</h4>
-                    <ul>
-                        <li>Romeo - Ahmet Yılmaz</li>
-                        <li>Juliet - Ayşe Demir</li>
-                        <li>Mercutio - Mehmet Kaya</li>
-                        <li>Benvolio - Ali Öztürk</li>
-                    </ul>
-
-                    <h4>Teknik Detaylar</h4>
-                    <ul>
-                        <li>Süre: 2 saat 30 dakika</li>
-                        <li>Yaş Sınırı: 12+</li>
-                        <li>Dil: Türkçe</li>
-                        <li>Yönetmen: Zeynep Yıldız</li>
-                    </ul>
-
-                    <h4>Salon Bilgisi</h4>
-                    <p>Devlet Tiyatrosu - Büyük Salon<br>
-                    Adres: Atatürk Bulvarı No: 123, Ankara<br>
-                    Kapasite: 500 kişi</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-                    <a href="#" class="btn btn-primary">Bilet Al</a>
+<!-- Theater Categories -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4">Theater Categories</h2>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-laugh"></i> Comedy</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-theater-masks"></i> Drama</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-music"></i> Musical</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-child"></i> Children’s Play</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-book"></i> Classic</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-lightbulb"></i> Modern</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-question-circle"></i> Absurd</a>
+                    <a href="#" class="btn btn-outline-primary"><i class="fas fa-film"></i> Documentary</a>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">KO-Bilet</h5>
-                    <p class="mb-3">Türkiye'nin en güvenilir bilet satış platformu. Konser, tiyatro ve etkinlik biletleriniz için doğru adres.</p>
-                    <div class="social-links mb-3">
-                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-3 fs-5"><i class="fab fa-youtube"></i></a>
+<!-- Hero Section -->
+<section class="hero-section position-relative" style="height: 420px; background: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;">
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <!-- Text removed -->
+    </div>
+</section>
+
+<!-- Theater Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="mb-4">Upcoming Plays</h2>
+        <div class="row">
+            <!-- Theater Card 1 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Romeo and Juliet">
+                    <div class="price-tag">₺180</div>
+                    <div class="category-badge">Drama</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
                     </div>
-                    <p class="mb-0"><i class="fas fa-phone me-2"></i> 0850 123 45 67</p>
-                    <p><i class="fas fa-envelope me-2"></i> info@ko-bilet.com</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Hızlı Linkler</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Ana Sayfa</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Konserler</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Tiyatro</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Etkinlikler</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Kampanyalar</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Yardım & Destek</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Sıkça Sorulan Sorular</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Bilet İade Koşulları</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Gizlilik Politikası</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Kullanım Koşulları</a></li>
-                        <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Bültenimize Katılın</h5>
-                    <p class="mb-3">En yeni etkinliklerden haberdar olmak için bültenimize abone olun.</p>
-                    <form class="mb-3">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="E-posta adresiniz">
-                            <button class="btn btn-primary" type="submit">Abone Ol</button>
-                        </div>
-                    </form>
-                    <div class="payment-methods">
-                        <h6 class="mb-3">Ödeme Yöntemleri</h6>
-                        <div class="d-flex gap-2">
-                            <i class="fab fa-cc-visa fs-4 text-light"></i>
-                            <i class="fab fa-cc-mastercard fs-4 text-light"></i>
-                            <i class="fab fa-cc-paypal fs-4 text-light"></i>
-                            <i class="fab fa-cc-apple-pay fs-4 text-light"></i>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Romeo and Juliet</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> June 20, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Ankara, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> State Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
                     </div>
                 </div>
             </div>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2024 KO-Bilet. Tüm hakları saklıdır.</p>
+
+            <!-- Theater Card 2 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Hamlet">
+                    <div class="price-tag">₺200</div>
+                    <div class="category-badge">Classic</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hamlet</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> June 25, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Istanbul, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> Istanbul City Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Güvenli Alışveriş | SSL Sertifikası</p>
+            </div>
+
+            <!-- Theater Card 3 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Little Red Riding Hood">
+                    <div class="price-tag">₺120</div>
+                    <div class="category-badge">Children’s Play</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Little Red Riding Hood</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> June 30, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Izmir, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> Izmir State Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theater Card 4 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="The Merchant of Venice">
+                    <div class="price-tag">₺220</div>
+                    <div class="category-badge">Classic</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">The Merchant of Venice</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> July 5, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Ankara, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> State Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theater Card 5 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Musical">
+                    <div class="price-tag">₺350</div>
+                    <div class="category-badge">Musical</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">The Hunchback of Notre Dame</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> July 10, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Istanbul, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> Istanbul City Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theater Card 6 -->
+            <div class="col-md-4">
+                <div class="card theater-card">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top theater-image" alt="Comedy">
+                    <div class="price-tag">₺150</div>
+                    <div class="category-badge">Comedy</div>
+                    <button class="favorite-btn" onclick="toggleFavorite(this)">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="play-details-btn" style="top: 10px; left: auto; right: 130px; bottom: auto;" data-bs-toggle="modal" data-bs-target="#playDetailsModal">
+                        <i class="fas fa-info-circle"></i> Details
+                    </button>
+                    <div class="tickets-left">
+                        <i class="fas fa-ticket-alt"></i> Last 15 Tickets
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">The Comedy of Errors</h5>
+                        <p class="card-text">
+                            <i class="fas fa-calendar-alt"></i> July 15, 2024<br>
+                            <i class="fas fa-map-marker-alt"></i> Izmir, Turkey<br>
+                            <i class="fas fa-theater-masks"></i> Izmir State Theater
+                        </p>
+                        <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        function toggleFavorite(button) {
-            button.classList.toggle('active');
-            const icon = button.querySelector('i');
-            if (button.classList.contains('active')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-            }
-        }
-    </script>
-</body>
-</html> 
+        <!-- Pagination -->
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<!-- Play Details Modal -->
+<div class="modal fade" id="playDetailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Romeo and Juliet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="modal-image" alt="Romeo and Juliet">
+                <h4>About the Play</h4>
+                <p>Shakespeare's timeless love story, staged with a modern interpretation! The story of love blossoming between two feuding families in Verona meets the audience with a contemporary touch.</p>
+                
+                <h4>Cast</h4>
+                <ul>
+                    <li>Romeo - Ahmet Yilmaz</li>
+                    <li>Juliet - Ayşe Demir</li>
+                    <li>Mercutio - Mehmet Kaya</li>
+                    <li>Benvolio - Ali Öztürk</li>
+                </ul>
+
+                <h4>Technical Details</h4>
+                <ul>
+                    <li>Duration: 2 hours 30 minutes</li>
+                    <li>Age Limit: 12+</li>
+                    <li>Language: Turkish</li>
+                    <li>Director: Zeynep Yıldız</li>
+                </ul>
+
+                <h4>Venue Information</h4>
+                <p>State Theater - Main Hall<br>
+                Address: Atatürk Boulevard No: 123, Ankara<br>
+                Capacity: 500 people</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#" class="btn btn-primary">Buy Ticket</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">KO-Ticket</h5>
+                <p class="mb-3">Turkey's most trusted ticket sales platform. The right address for your concert, theater, and event tickets.</p>
+                <div class="social-links mb-3">
+                    <a href="#" class="text-light me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-light me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light me-3 fs-5"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="mb-0"><i class="fas fa-phone me-2"></i> 0850 123 45 67</p>
+                <p><i class="fas fa-envelope me-2"></i> info@ko-ticket.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Home</a></li>
+                    <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Concerts</a></li>
+                    <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Theater</a></li>
+                    <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Events</a></li>
+                    <li class="mb-2"><a href="#" class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>Campaigns</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-
